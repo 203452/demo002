@@ -20,12 +20,13 @@ function Registro() {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                name: name,
+                name: name, 
                 lastname: lastName,
                 username: userName,
                 password: password
             })
         }
+        //consumir API
         fetch('http://ec2-52-23-209-79.compute-1.amazonaws.com/user/',option)
         .then(response => response.json())
         .then(data => {console.log(data)})
