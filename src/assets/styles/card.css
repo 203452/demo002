@@ -1,0 +1,16 @@
+.caja{
+    width: 20rem;
+    
+}
+
+.character{
+    width: 20rem;
+    max-width: 20rem;
+    height: 80%;
+}
+
+.item{
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+}

@@ -1,4 +1,4 @@
-import '../assets/styles/mostrar.css'
+
 import { useState, useEffect } from "react";
 import Card from './Card';
 
@@ -14,8 +14,9 @@ function Mostrar() {
     },[])
 
     return data.results == undefined ? console.log("loading...") : ( 
-        <div className='caja'>
+        <div>
             <div className='info'>
+                <h1>Rick and Morty</h1>
                 {
                     data.results.map (character => (
                         <Card

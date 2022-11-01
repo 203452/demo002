@@ -1,11 +1,13 @@
 import "../assets/styles/login.css";
-import Registro from "./Registro";
+import {Link, useNavigate} from 'react-router-dom'
 
 <style>
   @import
   url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 </style>;
 function Login() {
+  const navigate = useNavigate();
+
   let a=1;
     const handleBlur = (e) => {
         console.log(e.target.value)
@@ -13,17 +15,13 @@ function Login() {
     
     const handleSubmit = (e) =>{
       e.preventDefault();
+      navigate("/mostrar");
     }
 
     const handleFocus = () =>{
       console.log('hola mundo');
     }   
-    if(a==1){
-      return(
-        <Registro></Registro>
-      )
-    }
-    else{
+
       return (
         <div>
           <div className="caja">
@@ -43,7 +41,7 @@ function Login() {
               </div>
     
               <div>
-                <label htmlFor="user">Contraaseña:</label>
+                <label htmlFor="user">Contraseña:</label>
                 <input
                   type="password"
                   name="pass"
@@ -55,13 +53,18 @@ function Login() {
                 <button id="enviar" type="submit">
                   Entrar
                 </button>
+                <div>
+                <label>aun no tienes cuenta?</label>
+                  <Link to="/registro">
+                    Registrarse
+                  </Link>
+                </div>
               </div>
             </form>
-            <button>Registrarse</button>
           </div>
         </div>
       );
-    }
+    
 
   
 }
